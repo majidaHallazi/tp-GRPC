@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "CurrencyConversionService";
+
+service BankGrpcService {
+    rpc ConvertCurrency (ConvertCurrencyRequest) returns (ConvertCurrencyResponse);
+}
+
+message ConvertCurrencyRequest {
+    string currencyFrom = 1;
+    string currencyTo = 2;
+    double amount = 3;
+}
+
+message ConvertCurrencyResponse {
+    string currencyFrom = 1;
+    string currencyTo = 2;
+    double amount = 3;
+    double conversionResult = 4;
+}
